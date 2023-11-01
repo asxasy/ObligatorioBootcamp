@@ -5,6 +5,6 @@ export default PropTypes.shape({
     description: PropTypes.string,
     id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
 });

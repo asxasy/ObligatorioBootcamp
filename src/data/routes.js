@@ -1,7 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-
-export const ROUTES = {
+const ROUTES = {
   home: '/',
   login: 'login',
   product: 'products/:id',
 };
+
+export default ROUTES;
