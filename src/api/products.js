@@ -2,4 +2,6 @@ import instance from './config';
 
 const getProducts = () => instance.get('/products');
 
-export default getProducts;
+const getProductDetails = (id) => instance.get(`products/${id}`);
+
+export { getProducts, getProductDetails };
