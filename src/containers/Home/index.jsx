@@ -1,6 +1,6 @@
 import './index.scss';
 import React, { useEffect, useState } from 'react';
-import getProducts from '../../api/products';
+import { getProducts } from '../../api/products';
 import ProductList from '../../components/ProductList';
 
 const Home = () => {
