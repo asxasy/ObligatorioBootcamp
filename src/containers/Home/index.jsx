@@ -1,21 +1,24 @@
 import './index.scss';
 import React, { useEffect, useState } from 'react';
-import { getProducts } from '../../api/products';
+import { getProducts, getCategoryProducts } from '../../api/products';
 import ProductList from '../../components/ProductList';
 
 const Home = () => {
-  const [productList, setProductList] = useState([]);
-
-  const initHome = async () => {
-    const products = await getProducts();
-
+  const getProductByCategory = async (category) => {
+    let products = [];
+    if (category === 'All') {
+      products = await getProducts();
+    } else {
+      products = await getCategoryProducts(category);
+    }
     console.log(products);
-
     setProductList(products.data);
   };
 
+  const [productList, setProductList] = useState([]);
+
   useEffect(() => {
-    initHome();
+    getProductByCategory();
   }, []);
 
   return (
