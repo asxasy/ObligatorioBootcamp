@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { getCategories } from '../../api/products';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Button from 'Components/Button';
 
-const SideBar = () => {
-  const getAllCategories = async () => {
-    const categories = await getCategories();
-    setCategoryList(categories.data);
-  };
-
-  const [categoryList, setCategoryList] = useState([]);
-
+const SideBar = ({ categories, setCategory }) => {
   useEffect(() => {
-    getAllCategories();
+    console.log(categories);
   }, []);
-
   return (
     <div className="category-list">
-      {categoryList.map((category) => (
-        <button key={category} className="categories">
-          {category}
-        </button>
+      {categories.map((category) => (
+        <Button
+          key={category}
+          name={category}
+          onClick={() => setCategory(category)}
+        />
       ))}
     </div>
   );
+};
+
+SideBar.propTypes = {
+  categories: PropTypes.array.isRequired,
+  setCategory: PropTypes.func.isRequired,
 };
 
 export default SideBar;
