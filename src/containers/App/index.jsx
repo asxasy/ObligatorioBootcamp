@@ -4,8 +4,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import Home from 'Containers/Home';
 import ProductView from 'Containers/ProductView';
-
 import Login from 'Containers/Login';
+import Layout from '../../components/Layout';
 import ROUTES from '../../data/routes';
 
 import './index.scss';
@@ -13,7 +13,7 @@ import './index.scss';
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path={ROUTES.home} element={<Home />}>
+      <Route path={ROUTES.home} element={<Layout />}>
         <Route index element={<Home />} />
         <Route path={ROUTES.product} element={<ProductView />} />
       </Route>
