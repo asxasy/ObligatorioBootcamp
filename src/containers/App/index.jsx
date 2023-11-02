@@ -13,10 +13,8 @@ import './index.scss';
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path={ROUTES.home} element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path={ROUTES.product} element={<ProductView />} />
-      </Route>
+      <Route index element={<Home />} />
+      <Route path={ROUTES.product} element={<ProductView />} />
       <Route path={ROUTES.login} element={<Login />}>
         <Route index element={<Login />} />
       </Route>
