@@ -1,6 +1,12 @@
 /* eslint-disable import/prefer-default-export */
-
-export const ROUTES = {
+const ROUTES = {
+  cart: '/cart',
+  categories: 'categories/:category',
+  gift: '/gift',
+  giftUser: '/gift/:id',
   home: '/',
-  login: 'login'
+  login: 'login',
+  product: 'products/:id',
 };
+
+export default ROUTES;
