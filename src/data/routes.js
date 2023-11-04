@@ -3,6 +3,7 @@ const ROUTES = {
   cart: '/cart',
   categories: 'categories/:category',
   gift: '/gift',
+  giftUser: '/gift/:id',
   home: '/',
   login: 'login',
   product: 'products/:id',
