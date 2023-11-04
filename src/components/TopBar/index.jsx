@@ -15,14 +15,14 @@ const TopBar = ({ logo, routes }) => (
     </div>
     <nav className="top-bar__nav">
       <ul>
-        {routes.map(({ label, route }) => (
+        {routes.map(({ label, route, img }) => (
           <li key={label}>
             <NavLink
               to={route}
               className={({ isActive }) =>
                 isActive && 'top-bar__active'
               }>
-              {label}
+              {img ? <img src={img} alt={label} /> : label}
             </NavLink>
           </li>
         ))}
