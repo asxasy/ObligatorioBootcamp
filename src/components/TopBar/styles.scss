@@ -1,10 +1,11 @@
 .top-bar{
-    display: flex;
+    display:flex;
     justify-content: flex-start;
     background-color: $primary-color;
     color:$white;
     gap: 10%;
     height: 90px;
+    width: 100%;
 
     &__logo {
     img {
@@ -17,6 +18,8 @@
     align-items: center;
     
     ul {
+      display: inline-flex;
+      align-items: center;
       list-style: none;
       padding: 0;
       gap: 30px;
@@ -37,6 +40,11 @@
           &:hover {
             transform: scale(1.1);
             color: rgb(155, 49, 13);
+          }
+          img {
+            max-width: auto; /* Set your desired max width */
+            max-height: 50px; /* Set your desired max height */
+            border-radius: 50%;
           }
         }
       }
