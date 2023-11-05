@@ -5,6 +5,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from 'Containers/Home';
 import ProductView from 'Containers/ProductView';
 import Login from 'Containers/Login';
+import CartView from 'Containers/CartView';
 import Layout from 'Components/Layout';
 import SendGift from 'Containers/SendGift';
 import ROUTES from '../../data/routes';
@@ -27,6 +28,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path={ROUTES.gift} element={<SendGift />} />
             <Route path={ROUTES.product} element={<ProductView />} />
+            <Route path={ROUTES.giftUser} element={<CartView />} />
           </Route>
         </Routes>
       </UserContext.Provider>

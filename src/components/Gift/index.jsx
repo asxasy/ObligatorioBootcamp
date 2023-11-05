@@ -15,7 +15,7 @@ const Gift = ({ user }) => {
         </p>
       </div>
       <div className="userGift__cart">
-        <Link className="userGift__cart" to={`/giftUser/${id}`}>
+        <Link className="userGift__cart" to={`/gift/${id}`}>
           <p className="userGift__cart__goto">View Cart</p>
         </Link>
       </div>

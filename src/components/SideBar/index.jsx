@@ -6,6 +6,7 @@ const SideBar = ({ categories, setCategory }) => {
   useEffect(() => {
     console.log(categories);
   }, []);
+  const faux = () => setCategory(category);
   return (
     <div className="category-list">
       {categories.map((category) => (

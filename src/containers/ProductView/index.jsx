@@ -23,7 +23,7 @@ const ProductView = () => {
 
   useEffect(() => {
     retrieveProductDetails();
-  });
+  }, []);
 
   if (error) {
     return (
