@@ -1,5 +1,5 @@
 import './index.scss';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import SideBar from '../../components/SideBar';
 import {
   getProducts,
@@ -7,6 +7,7 @@ import {
   getCategories,
 } from '../../api/products';
 import ProductList from '../../components/ProductList';
+import { UserContext } from '../App';
 
 const Home = () => {
   // PARA SIDEBAR
@@ -15,6 +16,8 @@ const Home = () => {
     console.log(['All'].concat(categories.data));
     setCategoryList(['All'].concat(categories.data));
   };
+
+  const { loggedUser, setLoggedUser } = useContext(UserContext);
 
   const [categoryList, setCategoryList] = useState([]);
 
@@ -46,6 +49,7 @@ const Home = () => {
   return (
     <div className="home">
       <h1>Welcome to the Home Page of the React Bootcamp App</h1>
+      <p>{JSON.stringify(loggedUser)}</p>
       <SideBar categories={categoryList} setCategory={setCategory} />
       <ProductList products={productList} />
     </div>
