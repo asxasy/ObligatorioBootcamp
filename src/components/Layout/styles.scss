@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  min-height: 100%;
+
+  &__children {
+    padding: 20px;
+    height: 100%;
+  }
+}

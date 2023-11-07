@@ -1,9 +1,9 @@
 @import '../../theme/variables.scss';
 
-.movie {
+.product {
   background-color: $card-background;
   border: 1px solid $white;
-  border-radius: 4px;
+  border-radius: 3%;
   padding: 10px;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -17,21 +17,22 @@
     box-shadow: 0 4px 8px rgb(203, 200, 200);
   }
 
-  img {
-    max-width: 100%;
-  }
-
   &__title {
     font-size: 1.2rem;
     margin: 10px 0;
   }
 
-  &__year {
+  &__price {
     font-size: 1rem;
     opacity: 0.6;
     text-decoration: none;
     margin-bottom: 40px;
   }
+
+ &__image{
+    width: 100%;
+ }
+  
 
   @media (max-width: 660px) {
     width: 35%;

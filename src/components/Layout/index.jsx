@@ -5,6 +5,8 @@ import logo from '../../assets/logo.png';
 import cart from '../../assets/cart.png';
 import UserContext from '../../context/UserContext';
 
+import './styles.scss';
+
 const Layout = () => {
   const { loggedUser, setLoggedUser } = useContext(UserContext);
 
