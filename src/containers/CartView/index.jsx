@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import CartProduct from 'Components/CartProduct';
 import Button from 'Components/Button';
 import { getUserCart } from '../../api/carts';
-import { UserContext } from '../App';
+import UserContext from '../../context/UserContext';
 import ROUTES from '../../data/routes';
 
 const CartView = () => {

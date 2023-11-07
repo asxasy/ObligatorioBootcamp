@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
@@ -9,13 +9,13 @@ import CartView from 'Containers/CartView';
 import Layout from 'Components/Layout';
 import SendGift from 'Containers/SendGift';
 import ROUTES from '../../data/routes';
+import UserContext from '../../context/UserContext';
+import AuthRoute from '../../routers/AuthRoute';
 
 import './index.scss';
 
-const UserContext = createContext({});
-
 const App = () => {
-  const [loggedUser, setLoggedUser] = useState({});
+  const [loggedUser, setLoggedUser] = useState(false);
 
   return (
     <BrowserRouter>
@@ -26,9 +26,16 @@ const App = () => {
           </Route>
           <Route path={ROUTES.home} element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path={ROUTES.gift} element={<SendGift />} />
+            <Route exact path={ROUTES.gift} element={<AuthRoute />}>
+              <Route path={ROUTES.gift} element={<SendGift />} />
+            </Route>
             <Route path={ROUTES.product} element={<ProductView />} />
-            <Route path={ROUTES.giftUser} element={<CartView />} />
+            <Route
+              exact
+              path={ROUTES.giftUser}
+              element={<AuthRoute />}>
+              <Route path={ROUTES.giftUser} element={<CartView />} />
+            </Route>
           </Route>
         </Routes>
       </UserContext.Provider>
