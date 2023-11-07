@@ -48,7 +48,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Welcome to the Home Page of the React Bootcamp App</h1>
       <p>{JSON.stringify(loggedUser)}</p>
       <SideBar categories={categoryList} setCategory={setCategory} />
       <ProductList products={productList} />
