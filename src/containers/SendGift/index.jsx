@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import getUsers from '../../api/users';
 import UserGiftList from '../../components/UserGiftList';
-import { UserContext } from '../App';
+import UserContext from '../../context/UserContext';
 
 import './styles.scss';
 

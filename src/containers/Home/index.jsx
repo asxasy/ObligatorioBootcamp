@@ -7,7 +7,7 @@ import {
   getCategories,
 } from '../../api/products';
 import ProductList from '../../components/ProductList';
-import { UserContext } from '../App';
+import UserContext from '../../context/UserContext';
 
 const Home = () => {
   // PARA SIDEBAR
