@@ -13,21 +13,23 @@ const TopBar = ({ logo, routes }) => (
         logo
       )}
     </div>
-    <nav className="top-bar__nav">
-      <ul>
-        {routes.map(({ label, route, img }) => (
-          <li key={label}>
-            <NavLink
-              to={route}
-              className={({ isActive }) =>
-                isActive && 'top-bar__active'
-              }>
-              {img ? <img src={img} alt={label} /> : label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className="top-bar__items">
+      <nav className="top-bar__nav">
+        <ul>
+          {routes.map(({ label, route, img }) => (
+            <li key={label}>
+              <NavLink
+                to={route}
+                className={({ isActive }) =>
+                  isActive && 'top-bar__active'
+                }>
+                {img ? <img src={img} alt={label} /> : label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   </header>
 );
 

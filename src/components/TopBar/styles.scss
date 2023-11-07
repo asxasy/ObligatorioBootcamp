@@ -1,17 +1,25 @@
 .top-bar{
-    display:flex;
+    display: flex;
     justify-content: flex-start;
     background-color: $primary-color;
-    color:$white;
+    color: $white;
     gap: 10%;
     height: 90px;
     width: 100%;
+    z-index: 1;
+    position: fixed;
+
+&__items{
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
 
     &__logo {
-    img {
-      max-height: 90px;
+      img {
+        max-height: 90px;
+      }
     }
-  }
 
    &__nav {
     display: flex;
@@ -42,8 +50,8 @@
             color: rgb(155, 49, 13);
           }
           img {
-            max-width: auto; /* Set your desired max width */
-            max-height: 50px; /* Set your desired max height */
+            max-width: auto;
+            max-height: 50px;
             border-radius: 50%;
           }
         }
