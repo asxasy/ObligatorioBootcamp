@@ -10,8 +10,10 @@ const Product = ({ product }) => {
   return (
     <Link className="product" to={`/products/${id}`}>
       <img className="product__image" src={image} alt={title} />
-      <h3 className="product__title">{title}</h3>
-      <p className="product__price">{price}</p>
+      <div className="product__text">
+        <h3 className="product__title">{title}</h3>
+        <p className="product__price">Price {price} USD</p>
+      </div>
     </Link>
   );
 };
