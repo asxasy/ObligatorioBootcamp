@@ -1,5 +1,6 @@
 import './index.scss';
 import React, { useEffect, useState, useContext } from 'react';
+import { ColorRing } from 'react-loader-spinner';
 import SideBar from '../../components/SideBar';
 import {
   getProducts,
@@ -14,6 +15,7 @@ const Home = () => {
   const [categoryList, setCategoryList] = useState([]);
   const [category, setCategory] = useState('All');
   const [productList, setProductList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // PARA SIDEBAR
   const getAllCategories = async () => {
@@ -29,6 +31,7 @@ const Home = () => {
 
   // PARA PRODUCT LIST
   const getProductByCategory = async () => {
+    setLoading(true);
     let products = [];
 
     if (!category || category === 'All') {
@@ -37,6 +40,7 @@ const Home = () => {
       products = await getCategoryProducts(category);
     }
     setProductList(products.data);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -46,7 +50,25 @@ const Home = () => {
   return (
     <div className="home">
       <SideBar categories={categoryList} setCategory={setCategory} />
-      <ProductList products={productList} />
+      {!loading ? (
+        <ProductList products={productList} />
+      ) : (
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={[
+            '#e15b64',
+            '#f47e60',
+            '#f8b26a',
+            '#abbd81',
+            '#849b87',
+          ]}
+        />
+      )}
     </div>
   );
 };
