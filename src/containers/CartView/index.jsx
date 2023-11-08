@@ -3,9 +3,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import CartProduct from 'Components/CartProduct';
 import Button from 'Components/Button';
+import Error from 'Components/Error';
 import { getUserCart } from '../../api/carts';
 import UserContext from '../../context/UserContext';
 import ROUTES from '../../data/routes';
+import noData from '../../assets/noData.png';
 
 const CartView = () => {
   const { cartId } = useParams(); // {cartId: 2}
@@ -34,9 +36,11 @@ const CartView = () => {
 
   if (error) {
     return (
-      <div className="cart-view cart-view--error">
-        <h1>Cart not found</h1>
-      </div>
+      <Error
+        title="No data found"
+        image={noData}
+        text="No data found"
+      />
     );
   }
 
