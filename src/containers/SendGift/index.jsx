@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import GoBack from 'Components/GoBack';
 import getUsers from '../../api/users';
 import UserGiftList from '../../components/UserGiftList';
 
@@ -18,15 +19,7 @@ const SendGift = () => {
 
   return (
     <div className="sendGift">
-      {userList.length > 0 && (
-        <div className="sendGift__go-back">
-          <p>
-            <a href="/" className="sendGift__go-back__link">
-              back
-            </a>
-          </p>
-        </div>
-      )}
+      {userList.length > 0 && <GoBack />}
       <UserGiftList users={userList} />
     </div>
   );
