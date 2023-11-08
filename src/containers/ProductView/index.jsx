@@ -6,6 +6,7 @@ import { ColorRing } from 'react-loader-spinner';
 import GoBack from 'Components/GoBack';
 import { getProductDetails } from '../../api/products';
 import noData from '../../assets/noData.png';
+import './styles.scss';
 
 const ProductView = () => {
   const { id } = useParams();
@@ -48,11 +49,15 @@ const ProductView = () => {
               />
               <div className="product-view__text">
                 <h2 className="product-view__title">{title}</h2>
-                <p className="product-view__category">{category}</p>
+                <p className="product-view__category">
+                  Category {category}
+                </p>
                 <p className="product-view__description">
                   {description}
                 </p>
-                <p className="product-view__price">{price}</p>
+                <p className="product-view__price">
+                  Price {price} USD
+                </p>
               </div>
             </div>
           </div>
@@ -63,23 +68,25 @@ const ProductView = () => {
       );
     }
     return (
-      <ColorRing
-        visible
-        height="80"
-        width="80"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={[
-          '#fafafa',
-          '#e8e6e6',
-          '#d4d2cf',
-          '#b5b1aa',
-          '#918c83',
-          '#69635b',
-          '#403c35',
-        ]}
-      />
+      <div className="loader">
+        <ColorRing
+          visible
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={[
+            '#fafafa',
+            '#e8e6e6',
+            '#d4d2cf',
+            '#b5b1aa',
+            '#918c83',
+            '#69635b',
+            '#403c35',
+          ]}
+        />
+      </div>
     );
   };
 
