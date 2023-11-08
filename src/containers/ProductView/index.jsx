@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Error from 'Components/Error';
 import { getProductDetails } from '../../api/products';
+import noData from '../../assets/noData.png';
 
 const ProductView = () => {
   const { id } = useParams();
-
   const [retrievedProduct, setRetrievedProduct] = useState(null);
   const [error, setError] = useState(false);
 
@@ -27,9 +28,11 @@ const ProductView = () => {
 
   if (error) {
     return (
-      <div className="product-view product-view--error">
-        <h1>Product not found</h1>
-      </div>
+      <Error
+        title="No data found"
+        image={noData}
+        text="No data found"
+      />
     );
   }
 
