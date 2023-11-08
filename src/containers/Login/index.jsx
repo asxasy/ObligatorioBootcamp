@@ -5,7 +5,7 @@ import CustomInput from '../../components/Input';
 import Button from '../../components/Button';
 import './index.scss';
 import ROUTES from '../../data/routes';
-import { UserContext } from '../App';
+import UserContext from '../../context/UserContext';
 
 const Login = () => {
   const [userList, setUserList] = useState([]);

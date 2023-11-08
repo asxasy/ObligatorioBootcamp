@@ -1,23 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'Components/Button';
 
-const SideBar = ({ categories, setCategory }) => {
-  useEffect(() => {
-    console.log(categories);
-  }, []);
-  return (
-    <div className="category-list">
-      {categories.map((category) => (
-        <Button
-          key={category}
-          name={category}
-          onClick={() => setCategory(category)}
-        />
-      ))}
-    </div>
-  );
-};
+import './styles.scss';
+
+const SideBar = ({ categories, setCategory }) => (
+  <div className="category-list">
+    {categories.map((category) => (
+      <Button
+        key={category}
+        name={category}
+        onClick={() => setCategory(category)}
+      />
+    ))}
+  </div>
+);
 
 SideBar.propTypes = {
   categories: PropTypes.array.isRequired,
