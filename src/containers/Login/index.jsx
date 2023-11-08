@@ -45,18 +45,22 @@ const Login = () => {
 
   return (
     <div className="login">
-      <CustomInput
-        type="text"
-        value={inputEmail}
-        onChange={setInputEmail}
-      />
-      <CustomInput
-        type="text"
-        value={inputPassword}
-        onChange={setInputPassword}
-      />
-      <Button name="Login" onClick={validateUser} />
-      {!userValidation && buttonClicked && <p>Invalid information</p>}
+      <div className="login__form">
+        <CustomInput
+          type="text"
+          value={inputEmail}
+          onChange={setInputEmail}
+        />
+        <CustomInput
+          type="text"
+          value={inputPassword}
+          onChange={setInputPassword}
+        />
+        <Button name="Login" onClick={validateUser} />
+        {!userValidation && buttonClicked && (
+          <p>Invalid information</p>
+        )}
+      </div>
     </div>
   );
 };

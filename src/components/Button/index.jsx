@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 
 import './index.scss';
 
-const Button = ({ name, onClick }) => (
+const Button = ({ name, onClick, className }) => (
   <button
     onClick={(event) => {
       event.preventDefault();
       onClick();
     }}
-    className="button">
+    className={className}>
     {name}
   </button>
 );
 
 Button.propTypes = {
+  className: PropTypes.string,
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };

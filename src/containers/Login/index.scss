@@ -1,0 +1,31 @@
+@import '../../theme/variables.scss';
+
+.login{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 400px;
+    background-color: $white;
+    border: solid $primary-color;
+    border-radius: 3px;
+    }
+}
+
+BUtton{
+    margin-top: 30px;
+    font-family: $base-font;
+    font-size: $text-font-size;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 8px rgb(203, 200, 200);
+    }
+}
