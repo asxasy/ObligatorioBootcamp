@@ -10,6 +10,11 @@ import ProductList from '../../components/ProductList';
 import UserContext from '../../context/UserContext';
 
 const Home = () => {
+  const { loggedUser, setLoggedUser } = useContext(UserContext);
+  const [categoryList, setCategoryList] = useState([]);
+  const [category, setCategory] = useState('All');
+  const [productList, setProductList] = useState([]);
+
   // PARA SIDEBAR
   const getAllCategories = async () => {
     const categories = await getCategories();
@@ -17,21 +22,15 @@ const Home = () => {
     setCategoryList(['All'].concat(categories.data));
   };
 
-  const { loggedUser, setLoggedUser } = useContext(UserContext);
-
-  const [categoryList, setCategoryList] = useState([]);
-
   useEffect(() => {
     console.log('aaaaaaaa');
     getAllCategories();
   }, []);
 
-  // FUNCIONA PARA ELEGIR UNA CATEGORY
-  const [category, setCategory] = useState('All');
-
   // PARA PRODUCT LIST
   const getProductByCategory = async () => {
     let products = [];
+
     if (!category || category === 'All') {
       products = await getProducts();
     } else {
@@ -40,15 +39,12 @@ const Home = () => {
     setProductList(products.data);
   };
 
-  const [productList, setProductList] = useState([]);
-
   useEffect(() => {
     getProductByCategory();
   }, [category]);
 
   return (
     <div className="home">
-      <p>{JSON.stringify(loggedUser)}</p>
       <SideBar categories={categoryList} setCategory={setCategory} />
       <ProductList products={productList} />
     </div>
@@ -56,3 +52,4 @@ const Home = () => {
 };
 
 export default Home;
+//<p>{JSON.stringify(loggedUser)}</p>
