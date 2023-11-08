@@ -1,5 +1,9 @@
-html,
+@import '../../theme/variables.scss';
+
+
 body {
   margin: 0;
   padding: 0;
+  background-color: $secondary-color;
+  height: 100vh;
 }
