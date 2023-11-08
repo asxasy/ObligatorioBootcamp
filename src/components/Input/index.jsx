@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './index.scss';
 
-const Input = ({ value, onChange, type }) => (
+const Input = ({ value, onChange, type, inputid }) => (
   <div className="input">
+    <label htmlFor={inputid}>{inputid} </label>
     <input
+      id={inputid}
       type={type}
       value={value}
       onChange={(e) => onChange(e.target.value)}></input>
@@ -12,6 +14,7 @@ const Input = ({ value, onChange, type }) => (
 );
 
 Input.propTypes = {
+  inputid: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,

@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-radius: 5px;
 
     &__form{
     display: flex;
@@ -19,10 +20,12 @@
     }
 }
 
-BUtton{
+Button{
     margin-top: 30px;
     font-family: $base-font;
     font-size: $text-font-size;
+    width: 150px;
+    border-radius: 5px;
 
     &:hover {
         transform: scale(1.03);

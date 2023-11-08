@@ -47,11 +47,13 @@ const Login = () => {
     <div className="login">
       <div className="login__form">
         <CustomInput
+          inputid="Email"
           type="text"
           value={inputEmail}
           onChange={setInputEmail}
         />
         <CustomInput
+          inputid="Password"
           type="text"
           value={inputPassword}
           onChange={setInputPassword}

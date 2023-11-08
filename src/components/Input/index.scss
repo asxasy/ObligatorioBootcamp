@@ -1,13 +1,21 @@
 @import '../../theme/variables.scss';
 .input{
-    align-items: center;
     display: flex;
-    font-family: monospace;
-    justify-content: center;
-    padding: 5%;
+    align-items: center;
+    padding-top: 5%;
+    font-family: $base-font;
 
 }
 
 input{
     border: solid $primary-color 2px;
+    align-self: flex-end;
+    flex: 1;
+}
+
+label{
+    font-family: $base-font;
+    font-size: $text-font-size;
+    margin-right: 10px;
+    width: 100px;
 }
