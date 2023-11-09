@@ -16,4 +16,12 @@
         transform: scale(1.1);
         color: rgb(155, 49, 13);
     }
+    
+    @media (max-width: 660px) {
+    height: 50px;
+    font-size: 16px;
+    width: 60px;
+    margin-left: 0px;
+    padding: 0px;
+    }
 }
