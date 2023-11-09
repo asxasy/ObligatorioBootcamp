@@ -1,0 +1,19 @@
+@import '../../theme/variables.scss';
+
+.logout-button{
+    text-decoration: none;
+    font-family: $base-font;
+    color:$white;
+    transition: all 0.2s;
+    display: inline-block;
+    border: none;
+    width: 100px;
+    font-size: 25px;
+    height: 80px;
+    margin: 5px;
+
+    &:hover {
+        transform: scale(1.1);
+        color: rgb(155, 49, 13);
+    }
+}
