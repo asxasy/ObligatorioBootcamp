@@ -10,6 +10,13 @@
     top: 90px;
     left: 0;
     width: 131px;
+
+    @media (max-width: 660px) {
+        width: 88px;
+        top: 61px;
+        margin-left: 0px;
+        padding: 0px;
+    }
 }
 
 Button{
@@ -21,4 +28,10 @@ Button{
     padding: 10px;
     border-bottom: solid $white 0.5px;
     width: 75%;
+
+    @media (max-width: 660px) {
+        width: 70%;
+        font-size: 14px;
+        padding-left: 3px;
+    }
 }
