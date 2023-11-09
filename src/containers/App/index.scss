@@ -6,4 +6,8 @@ body {
   padding: 0;
   background-color: $secondary-color;
   height: 100vh;
+  
+  @media (max-width: 660px) {
+    width: 150%;
+  }
 }
