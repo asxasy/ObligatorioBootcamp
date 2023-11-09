@@ -54,11 +54,15 @@ const Login = () => {
         />
         <CustomInput
           inputid="Password"
-          type="text"
+          type="password"
           value={inputPassword}
           onChange={setInputPassword}
         />
-        <Button name="Login" onClick={validateUser} />
+        <Button
+          className="login__button"
+          name="Login"
+          onClick={validateUser}
+        />
         {!userValidation && buttonClicked && (
           <p>Invalid information</p>
         )}

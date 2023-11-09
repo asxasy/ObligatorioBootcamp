@@ -4,6 +4,7 @@ import TopBar from 'Components/TopBar';
 import logo from '../../assets/logo.png';
 import cart from '../../assets/cart.png';
 import UserContext from '../../context/UserContext';
+import ROUTES from '../../data/routes';
 
 import './styles.scss';
 

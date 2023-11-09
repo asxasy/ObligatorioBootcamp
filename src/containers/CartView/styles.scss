@@ -1,0 +1,15 @@
+@import '../../theme/variables.scss';
+
+.cart-view{
+  height: 100vh;
+
+    &__details{
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  font-family: monospace;
+  justify-content: center;
+    }
+}
+

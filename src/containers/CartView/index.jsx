@@ -10,6 +10,7 @@ import { getUserCart } from '../../api/carts';
 import UserContext from '../../context/UserContext';
 import ROUTES from '../../data/routes';
 import noData from '../../assets/noData.png';
+import './styles.scss';
 
 const CartView = () => {
   const { cartId } = useParams(); // {cartId: 2}
