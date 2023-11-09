@@ -58,6 +58,7 @@ const SendGift = () => {
       );
     }
     return (
+      <div className="loader">
       <ColorRing
         visible
         height="80"
@@ -75,6 +76,7 @@ const SendGift = () => {
           '#403c35',
         ]}
       />
+      </div>
     );
   };
 
