@@ -4,12 +4,29 @@
   height: 100vh;
 
     &__details{
-  align-items: center;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  font-family: monospace;
-  justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    font-family: monospace;
+    justify-content: center;
     }
+
+    &__buy{
+        margin: 30px;
+        width: 150px;
+        border-radius: 5px;
+
+        &:hover {
+        transform: scale(1.1);
+        color: rgb(155, 49, 13);
+    }
+    }
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 

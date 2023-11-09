@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getProductDetails } from '../../api/products';
+import './styles.scss';
 
 const Cartproduct = ({ productId, quantity }) => {
   const [product, setProduct] = useState({});
@@ -18,12 +19,18 @@ const Cartproduct = ({ productId, quantity }) => {
   }, []);
 
   return (
-    <div className="product">
-      <img src={product.image} alt={product.title} />
-      <p className="product__title">{product.title}</p>
-      <p className="product__price">{product.price}</p>
-      <p className="product__quantity">{quantity}</p>
-      <p className="product__finalprice">{finalPrice}</p>
+    <div className="product-cart">
+      <img
+        className="product-cart__image"
+        src={product.image}
+        alt={product.title}
+      />
+      <div className="product-cart__details">
+        <h3 className="product-cart__title">{product.title}</h3>
+        <p className="product-cart__price">Price {product.price} USD</p>
+        <p className="product-cart__quantity">Quantity: {quantity}</p>
+        <p className="product-cart__finalprice">Total Price {finalPrice} USD</p>
+      </div>
     </div>
   );
 };

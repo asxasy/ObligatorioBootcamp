@@ -70,6 +70,7 @@ const CartView = () => {
               ))}
               {products.length > 0 && (
                 <Button
+                  className="cart-view__buy"
                   name="Buy Cart"
                   onClick={() => navigate(ROUTES.home)}
                 />
@@ -83,6 +84,7 @@ const CartView = () => {
       );
     }
     return (
+      <div className="loader">
       <ColorRing
         visible
         height="80"
@@ -100,6 +102,7 @@ const CartView = () => {
           '#403c35',
         ]}
       />
+      </div>
     );
   };
 
