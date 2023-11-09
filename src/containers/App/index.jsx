@@ -8,6 +8,7 @@ import Login from 'Containers/Login';
 import CartView from 'Containers/CartView';
 import Layout from 'Components/Layout';
 import SendGift from 'Containers/SendGift';
+import UserProfile from 'Containers/UserProfile';
 import ROUTES from '../../data/routes';
 import UserContext from '../../context/UserContext';
 import AuthRoute from '../../routers/AuthRoute';
@@ -35,6 +36,9 @@ const App = () => {
               path={ROUTES.giftUser}
               element={<AuthRoute />}>
               <Route path={ROUTES.giftUser} element={<CartView />} />
+            </Route>
+            <Route exact path={ROUTES.user} element={<AuthRoute />}>
+              <Route path={ROUTES.user} element={<UserProfile />} />
             </Route>
           </Route>
         </Routes>

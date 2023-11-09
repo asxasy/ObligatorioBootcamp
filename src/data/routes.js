@@ -7,6 +7,7 @@ const ROUTES = {
   home: '/',
   login: 'login',
   product: 'products/:id',
+  user: '/userProfile',
 };
 
 export default ROUTES;
