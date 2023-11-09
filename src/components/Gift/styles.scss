@@ -1,12 +1,14 @@
+@import '../../theme/variables.scss';
+
 .userGift{
     display: flex;
     justify-content: space-between;
-    width: 50%;
-    margin-left: 25%;
+    width: 80%;
+    margin-left: 10%;
     align-items: center;
     font-family: $base-font;
     font-size: $text-font-size;
-    border-bottom: 1px solid rgb(206, 203, 203);
+    border-bottom: 1px solid $primary-color;
 
     &__cart{
         text-decoration: none;

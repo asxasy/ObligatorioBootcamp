@@ -1,3 +1,14 @@
-.user-list{
+@import '../../theme/variables.scss';
 
+.user-list{
+    background: $white;
+    width: 50%;
+    margin-left: 20%;
+    border: solid 2px $primary-color;
+    border-radius: 5px;
+
+    @media (max-width: 660px) {
+        width: 80%;
+        margin-left: 0;
+    }
 }
