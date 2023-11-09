@@ -22,6 +22,11 @@
         color: rgb(155, 49, 13);
     }
     }
+
+    @media (max-width: 660px) {
+        height: 100%;
+    }
+
 }
 
 .loader{
