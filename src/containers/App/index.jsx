@@ -9,6 +9,7 @@ import CartView from 'Containers/CartView';
 import Layout from 'Components/Layout';
 import SendGift from 'Containers/SendGift';
 import UserProfile from 'Containers/UserProfile';
+import NotFound from 'Containers/NotFound';
 import ROUTES from '../../data/routes';
 import UserContext from '../../context/UserContext';
 import AuthRoute from '../../routers/AuthRoute';
@@ -40,6 +41,7 @@ const App = () => {
             <Route exact path={ROUTES.user} element={<AuthRoute />}>
               <Route path={ROUTES.user} element={<UserProfile />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </UserContext.Provider>
