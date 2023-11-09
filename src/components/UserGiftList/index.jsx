@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Gift from 'Components/Gift';
+
+import './styles.scss';
 
 const UserGiftList = ({ users = [] }) => {
   const userGiftList = users;
