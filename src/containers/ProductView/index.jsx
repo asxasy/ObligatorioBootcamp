@@ -16,16 +16,15 @@ const ProductView = () => {
 
   const retrieveProductDetails = async () => {
     setLoading(true);
-    const selectedProduct = await getProductDetails(id);
 
-    console.log(selectedProduct);
-
-    if (!id || !selectedProduct) {
-      setError(true);
-    } else {
+    try {
+      const selectedProduct = await getProductDetails(id);
       setRetrievedProduct(selectedProduct.data);
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -63,9 +62,7 @@ const ProductView = () => {
           </div>
         );
       }
-      return (
-        <Error title="No data found" image={noData} text="Error" />
-      );
+      return <Error image={noData} className="product-view__error" />;
     }
     return (
       <div className="loader">

@@ -36,17 +36,18 @@ const Home = () => {
   const getProductByCategory = async () => {
     setLoading(true);
     let products = [];
-
-    if (!category || category === 'All') {
-      products = await getProducts();
-    } else {
-      products = await getCategoryProducts(category);
-    }
-    console.log(products);
-    if (products.status !== 200 || products.data.length === 0) {
+    try {
+      if (!category || category === 'All') {
+        products = await getProducts();
+      } else {
+        products = await getCategoryProducts(category);
+      }
+      setProductList(products.data);
+    } catch {
       setError(true);
-    } else setProductList(products.data);
-    setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -58,9 +59,7 @@ const Home = () => {
       if (!error) {
         return <ProductList products={productList} />;
       }
-      return (
-        <Error title="No data found" image={noData} text="Error" />
-      );
+      return <Error image={noData} className="error" />;
     }
     return (
       <ColorRing
