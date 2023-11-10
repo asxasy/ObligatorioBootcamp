@@ -22,20 +22,15 @@ const CartView = () => {
 
   const retrieveCartDetails = async () => {
     setLoading(true);
-    const selectedCart = await getUserCart(cartId);
 
-    console.log(selectedCart);
-    console.log(cartId);
-    console.log(!cartId || !selectedCart);
-
-    if (selectedCart.status !== 200) {
-      setError(true);
-    } else {
-      console.log('aaaaaaaaa');
-      console.log(selectedCart.data[0]);
+    try {
+      const selectedCart = await getUserCart(cartId);
       setRetrievedCart(selectedCart.data[0]);
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -79,29 +74,27 @@ const CartView = () => {
           </div>
         );
       }
-      return (
-        <Error title="No data found" image={noData} text="Error" />
-      );
+      return <Error image={noData} />;
     }
     return (
       <div className="loader">
-      <ColorRing
-        visible
-        height="80"
-        width="80"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={[
-          '#fafafa',
-          '#e8e6e6',
-          '#d4d2cf',
-          '#b5b1aa',
-          '#918c83',
-          '#69635b',
-          '#403c35',
-        ]}
-      />
+        <ColorRing
+          visible
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={[
+            '#fafafa',
+            '#e8e6e6',
+            '#d4d2cf',
+            '#b5b1aa',
+            '#918c83',
+            '#69635b',
+            '#403c35',
+          ]}
+        />
       </div>
     );
   };

@@ -17,15 +17,14 @@ const SendGift = () => {
 
   const getAllUsers = async () => {
     setLoading(true);
-    const users = await getUsers();
-    const modifiedUsers = removeLoggedUserFromList(users.data);
-
-    if (!modifiedUsers) {
+    try {
+      const users = await getUsers();
+      const modifiedUsers = removeLoggedUserFromList(users.data);
+    } catch {
       setError(true);
-    } else {
-      setUserList(modifiedUsers);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const removeLoggedUserFromList = (users = []) => {
@@ -53,29 +52,27 @@ const SendGift = () => {
           </div>
         );
       }
-      return (
-        <Error title="No data found" image={noData} text="Error" />
-      );
+      return <Error image={noData} />;
     }
     return (
       <div className="loader">
-      <ColorRing
-        visible
-        height="80"
-        width="80"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={[
-          '#fafafa',
-          '#e8e6e6',
-          '#d4d2cf',
-          '#b5b1aa',
-          '#918c83',
-          '#69635b',
-          '#403c35',
-        ]}
-      />
+        <ColorRing
+          visible
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={[
+            '#fafafa',
+            '#e8e6e6',
+            '#d4d2cf',
+            '#b5b1aa',
+            '#918c83',
+            '#69635b',
+            '#403c35',
+          ]}
+        />
       </div>
     );
   };

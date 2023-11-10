@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.scss';
 
 const Error = ({ title, image, text, className }) => (
   <div className={className}>
     <h2>{title}</h2>
-    <img src={image} alt={text}></img>
+    <img src={image} alt={text} className="error__image"></img>
     <p>{text}</p>
   </div>
 );
