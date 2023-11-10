@@ -1,0 +1,84 @@
+@import '../../theme/variables.scss';
+
+.top-bar{
+  display: flex;
+  justify-content: flex-start;
+  background-color: $primary-color;
+  color: $white;
+  gap: 10%;
+  height: 90px;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+
+  &__items{
+    display: flex;
+    justify-content: flex-end;
+    width: 75%;
+  }
+
+    &__logo {
+      img {
+        max-height: 90px;
+
+        @media (max-width: 660px) {
+          max-height: 60px;
+        }
+      }
+    }
+
+   &__nav {
+    display: flex;
+    align-items: center;
+    
+    ul {
+      display: inline-flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      gap: 30px;
+
+      li {
+        margin-right: 10px;       
+
+        a { 
+          text-decoration: none;
+          font-family: $base-font;
+          font-size: 25px;
+          color:$white;
+          transition: all 0.2s;
+          display: inline-block;
+          width: auto;
+          height: auto;
+
+          &:hover {
+            transform: scale(1.1);
+            color: rgb(155, 49, 13);
+          }
+          img {
+            max-width: auto;
+            max-height: 50px;
+            border-radius: 50%;
+
+            @media (max-width: 660px) {
+              max-width: auto;
+              max-height: 20px;
+            }
+          }
+          @media (max-width: 660px) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      @media (max-width: 660px) {
+        gap: 5px;
+      }
+    }
+   }
+
+  @media (max-width: 660px) {
+    height: 60px;
+    width: 100%;
+  }
+  }

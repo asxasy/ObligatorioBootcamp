@@ -1,0 +1,36 @@
+@import '../../theme/variables.scss';
+
+.product-cart{
+
+    display: flex;
+    background-color: $white;
+    gap: 10%;
+    border-radius: 5px;
+    height: 250px;
+    margin: 10px;
+    width: 70%;
+
+
+    &__details{
+        display: flex;
+        flex-direction: column;
+        font-family: $base-font;
+        justify-content: center;
+
+    @media (max-width: 660px) {
+        font-size: 12px;
+    }
+
+    }
+
+    &__image{
+    height: 240px;
+    margin-top: 5px;
+    margin-left: 10px;
+
+    @media (max-width: 660px) {
+        height: 120px;
+        margin-top: 25%;
+    }
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../theme/variables.scss';
+
+.cart-view{
+  height: 150vh;
+
+    &__details{
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    font-family: monospace;
+    justify-content: center;
+    }
+
+    &__buy{
+        margin: 30px;
+        width: 150px;
+        border-radius: 5px;
+
+        &:hover {
+        transform: scale(1.1);
+        color: rgb(155, 49, 13);
+    }
+    }
+
+    @media (max-width: 660px) {
+        height: 100%;
+    }
+
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.empty-cart{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+

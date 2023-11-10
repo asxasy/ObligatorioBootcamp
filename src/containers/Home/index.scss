@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex: 1;
-  flex-direction: column;
+  flex-direction: row;
   font-family: monospace;
   justify-content: center;
 
@@ -13,5 +13,12 @@
   & h5 {
     font-size: 12px;
     margin: 0;
+  }
+}
+.error{
+  margin-left: 80px;
+
+  @media (max-width: 660px) {
+     margin-left: 60px;
   }
 }

@@ -1,0 +1,60 @@
+@import '../../theme/variables.scss';
+
+.product-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__details{
+    display: flex;
+    font-family: $base-font;
+    width: 75%;
+    background-color: $white;
+    border: solid $primary-color 1px;
+    border-radius: 5px;
+    align-items: flex-start;
+
+    @media (max-width: 660px) {
+        width: 100%;
+
+    }
+
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &__category{
+        border: solid 1px $primary-color;
+        padding: 5px;
+        width: fit-content;
+    }
+
+    &__image{
+        max-width: 30%;
+        height: auto;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    &__error{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+

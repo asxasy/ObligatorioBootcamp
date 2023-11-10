@@ -1,0 +1,11 @@
+.go-back{
+    align-self: flex-start;
+    width: 100px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+
+    &:hover {
+        transform: scale(1.1);
+        color: rgb(155, 49, 13);
+    }
+}

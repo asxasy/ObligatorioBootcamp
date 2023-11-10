@@ -1,0 +1,32 @@
+@import '../../theme/variables.scss';
+
+.user-profile {
+  border: solid $primary-color;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: $white;
+    margin-top: 30px;
+
+  &__data{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    margin: 5%;
+
+    @media (max-width: 660px) {
+    grid-template-columns: repeat(1, auto);
+    }
+
+  }
+
+  &__title{
+    font-size: $text-font-size;
+    font-family: $base-font;
+    color: $primary-color;
+    margin-left: 45%;
+
+    @media (max-width: 660px) {
+          margin-left: 40%;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../theme/variables.scss';
+
+.userGift{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+    align-items: center;
+    font-family: $base-font;
+    font-size: $text-font-size;
+    border-bottom: 1px solid $primary-color;
+
+    &__cart{
+        text-decoration: none;
+    }
+
+    &__cart__goto{
+        border: 2px $primary-color;
+        border-style:solid;
+        border-radius: 10%;
+        padding: 5px;
+        background-color: $primary-color;
+        color: black;
+    }
+}
