@@ -20,6 +20,7 @@ const SendGift = () => {
     try {
       const users = await getUsers();
       const modifiedUsers = removeLoggedUserFromList(users.data);
+      setUserList(modifiedUsers);
     } catch {
       setError(true);
     } finally {
