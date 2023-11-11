@@ -9,7 +9,6 @@ const Cartproduct = ({ productId, quantity }) => {
 
   const retrieveProductDetails = async () => {
     const selectedProduct = await getProductDetails(productId);
-    console.log(selectedProduct);
     setProduct(selectedProduct.data);
     setfinalPrice(selectedProduct.data.price * quantity);
   };
@@ -27,9 +26,13 @@ const Cartproduct = ({ productId, quantity }) => {
       />
       <div className="product-cart__details">
         <h3 className="product-cart__title">{product.title}</h3>
-        <p className="product-cart__price">Price {product.price} USD</p>
+        <p className="product-cart__price">
+          Price {product.price} USD
+        </p>
         <p className="product-cart__quantity">Quantity: {quantity}</p>
-        <p className="product-cart__finalprice">Total Price {finalPrice} USD</p>
+        <p className="product-cart__finalprice">
+          Total Price {finalPrice} USD
+        </p>
       </div>
     </div>
   );

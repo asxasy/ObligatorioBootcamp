@@ -37,14 +37,9 @@ const CartView = () => {
     retrieveCartDetails();
   }, []);
 
-  const { id, userId, date, products } = retrievedCart || {
-    date: null,
-    id: null,
+  const { products } = retrievedCart || {
     products: [],
-    userId: null,
   };
-
-  console.log(retrievedCart);
 
   const renderCartView = () => {
     if (!loading) {

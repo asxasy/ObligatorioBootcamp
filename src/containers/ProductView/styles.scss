@@ -7,19 +7,17 @@
     align-items: center;
 
     &__details{
-    display: flex;
-    font-family: $base-font;
-    width: 75%;
-    background-color: $white;
-    border: solid $primary-color 1px;
-    border-radius: 5px;
-    align-items: flex-start;
+        display: flex;
+        font-family: $base-font;
+        width: 75%;
+        background-color: $white;
+        border: solid $primary-color 1px;
+        border-radius: 5px;
+        align-items: flex-start;
 
-    @media (max-width: 660px) {
-        width: 100%;
-
-    }
-
+        @media (max-width: 660px) {
+            width: 100%;
+        }
     }
 
     &__text{
@@ -47,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-}
+    }
 }
 
 .loader{

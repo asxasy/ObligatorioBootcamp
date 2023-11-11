@@ -5,7 +5,7 @@ import './styles.scss';
 
 const NotFound = () => (
   <div className="Error404">
-    <Error image={Error404} className="E" />
+    <Error image={Error404} className="Error404__error" />
   </div>
 );
 

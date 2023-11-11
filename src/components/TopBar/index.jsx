@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import UserContext from '../../context/UserContext';
 import './styles.scss';
-import LogoutButton from '../../components/LogoutButton';
+import LogoutButton from '../LogoutButton';
 
 const TopBar = ({ logo, routes }) => {
   const { loggedUser, setLoggedUser } = useContext(UserContext);
