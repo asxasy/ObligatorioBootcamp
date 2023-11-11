@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './index.scss';
-
 const Button = ({ name, onClick, className }) => (
   <button
     onClick={(event) => {

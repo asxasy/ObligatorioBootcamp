@@ -7,10 +7,6 @@ import './styles.scss';
 const UserProfile = () => {
   const { loggedUser, setLoggedUser } = useContext(UserContext);
 
-  useEffect(() => {
-    console.log(loggedUser.name.firstName);
-  }, []);
-
   return (
     <div>
       <GoBack />
