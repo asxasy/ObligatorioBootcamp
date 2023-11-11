@@ -20,15 +20,12 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // PARA SIDEBAR
   const getAllCategories = async () => {
     const categories = await getCategories();
-    console.log(['All'].concat(categories.data));
     setCategoryList(['All'].concat(categories.data));
   };
 
   useEffect(() => {
-    console.log('aaaaaaaa');
     getAllCategories();
   }, []);
 
@@ -91,4 +88,3 @@ const Home = () => {
 };
 
 export default Home;
-// <p>{JSON.stringify(loggedUser)}</p>

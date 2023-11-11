@@ -1,7 +1,7 @@
 @import '../../theme/variables.scss';
 
 .cart-view{
-  height: 150vh;
+    height: 150vh;
 
     &__details{
     align-items: center;
@@ -20,13 +20,12 @@
         &:hover {
         transform: scale(1.1);
         color: rgb(155, 49, 13);
-    }
+        }
     }
 
     @media (max-width: 660px) {
         height: 100%;
     }
-
 }
 
 .loader{
